@@ -2,13 +2,24 @@ This is the fifth part of a multi-part series of blog posts on Micro-services.  
 
 4. The fundamentals of micro-services
 
-So you've decided that you want to build some micro-services.  The question now becomes, how do I build this in an effective manner that will reduce the challenges and provide the greatest value for the project.  Well before you get yourself stuck into micro-services I think it's imperative to understand some of the fundamentals that underly the concepts.
+So you've decided that you want to build some micro-services.  The question now becomes, how do I build this in an effective manner that will reduce the challenges and provide the greatest value for the project.  Well before you get yourself stuck into micro-services I think it's imperative to understand some of the fundamentals that underly the concepts.  One thing to consider is that if you are struggling with any of these concepts in your code base you've likely made a mistake with your architecture.  This is really really hard to get right.  On my current project we've screwed up many many times and now we MAY be right, but just maybe.
 
-a) Domain driven design
+a) Use bounded contexts with abandon
 
-Eric Evans wrote a wonderful (and terribly dry) book about the concept of domain driven design.  I think there is a lot of value in reading the book, but I have a dirty secret.  I didn't read the whole thing.  Instead, I read probably the first half.  However, fortunately there is a fantastic summary published(1) that covers many of the core concepts explained in the book.  The key concept that appears to come up in most conversations revolving around micro-services is Bounded Contexts.  
+Eric Evans wrote a wonderful (and terribly dry) book about the concept of domain driven design.  I think there is a lot of value in reading the book, but I have a dirty secret.  I didn't read the whole thing.  Instead, I read probably the first half.  However, fortunately there is a fantastic summary published(1) that covers many of the core concepts explained in the book.  In general, a very important concept behind Micro-services is the ability for them to enforce strict seperation of each bounded context.  This, if you follow it strictly, will lead you to much cleaner code and a much easier to understand system.  Well bounded contexts are one of the tools that have to be used to reduce the cognative complexity that micro-services introduce.
 
-I have found that this is a VERY VERY important
+b) Couple once, never twice
 
+There is a theory that I've heard around Micro-services and actually architecture in general.  This theory is that you should ALWAYS avoid coupling between two services.  While this is a noble goal, there will actually always be a coupling between a service and another service that it depends on.  It's why we use well defined interfaces to at least reduce the coupling to the smallest surface area.  However your interface is still a point of coupling (and incidentally an area where bounded contexts tend to become leaky abstractions).  The thing that you have to avoid is coupling your services two deep.  This is especially important if you choose to use shared client code (see discussion on this in the next post) as you then don't just have a conceptual coupling but you've also introduced a code coupling.  Not a good place to be. 
 
-(1) Link to the pdf published on the topic
+c) Let the consumer drive the API, not the datastore
+
+One of the most important things I've learnt about micro-services is that you have to be hard on the ball around interface design.  The interface segregation principle plays heavily here.  It is important that each consumer is the only user of a given API.  This means that if an interface changes for whatever reason any other consumers of the service are issolated from the 
+
+d) Re-write rather than maintain
+
+e) Integration (VEST) tests rather than Unit tests
+
+f) Collapse services if you don't need them
+
+g) Refactor with vengence
