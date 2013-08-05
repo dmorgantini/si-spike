@@ -1,3 +1,5 @@
+This is the fifth part of a multi-part series of blog posts on Micro-services.  There seems to be alot of ambiguity amongst the community around what these things are, when they should be used and how to approach them.  This blog series is basically a regurgitation of 5 years of building and learning about micro-services.  I imagine that not everybody will agree with everything I say here, but I hope that there is nothing so controversial as to cause serious disagreements. 
+
 4. The fundamentals of micro-services
 
 So you've decided that you want to build some micro-services.  The question now becomes, how do I build this in an effective manner that will reduce the challenges and provide the greatest value for the project.  Well before you get yourself stuck into micro-services I think it's imperative to understand some of the fundamentals that underly the concepts.

@@ -1,3 +1,5 @@
+This is the forth part of a multi-part series of blog posts on Micro-services.  There seems to be alot of ambiguity amongst the community around what these things are, when they should be used and how to approach them.  This blog series is basically a regurgitation of 5 years of building and learning about micro-services.  I imagine that not everybody will agree with everything I say here, but I hope that there is nothing so controversial as to cause serious disagreements. 
+
 3. The challenges of Micro-services (Why you shouldn't use them)
 
 As with every tool that we choose to use, there are costs and benefits.  The benefits of micro-services are many and varied (as I outlined in the previous section) but the costs are there.  Without mitigation, it is entirely possible for a project with micro-services to be sunk beneath the costs. 

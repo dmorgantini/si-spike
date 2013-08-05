@@ -1,3 +1,5 @@
+This is the second part of a multi-part series of blog posts on Micro-services.  There seems to be alot of ambiguity amongst the community around what these things are, when they should be used and how to approach them.  This blog series is basically a regurgitation of 5 years of building and learning about micro-services.  I imagine that not everybody will agree with everything I say here, but I hope that there is nothing so controversial as to cause serious disagreements. 
+
 1. What are Micro-services (aka Micro-service architecture)?
 
 The concept of micro-services is relatively new (this is based only on the google search for the term).  It seems that the concept was coined by a colleague of mine, James Lewis.  It seems likely however, that people have been building software following this paradigm for quite a while, just haven't really put alot of thought into what it actually means.  It's not easy to define micro services however, but I'll give it my best shot. ** not true, need a bit better description here 
