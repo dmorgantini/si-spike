@@ -1,0 +1,12 @@
+4. The fundamentals of micro-services
+
+So you've decided that you want to build some micro-services.  The question now becomes, how do I build this in an effective manner that will reduce the challenges and provide the greatest value for the project.  Well before you get yourself stuck into micro-services I think it's imperative to understand some of the fundamentals that underly the concepts.
+
+a) Domain driven design
+
+Eric Evans wrote a wonderful (and terribly dry) book about the concept of domain driven design.  I think there is a lot of value in reading the book, but I have a dirty secret.  I didn't read the whole thing.  Instead, I read probably the first half.  However, fortunately there is a fantastic summary published(1) that covers many of the core concepts explained in the book.  The key concept that appears to come up in most conversations revolving around micro-services is Bounded Contexts.  
+
+I have found that this is a VERY VERY important
+
+
+(1) Link to the pdf published on the topic

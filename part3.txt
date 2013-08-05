@@ -1,0 +1,36 @@
+3. The challenges of Micro-services (Why you shouldn't use them)
+
+As with every tool that we choose to use, there are costs and benefits.  The benefits of micro-services are many and varied (as I outlined in the previous section) but the costs are there.  Without mitigation, it is entirely possible for a project with micro-services to be sunk beneath the costs. 
+
+I think that it's important to point out though, that many of the challenges I'm going to list here are also challenges for non-Micro-service architectures.  Often-times these challenges become implicit challenges in other architectures rather than explicit challenges in micro-services.  There is always going to be a trade off between the costs and benefits.
+
+This section of this series is going to focus mainly on the challenges themselves.  I will attempt to explain and articulate them in a meaningful, and therefore discussable way.  The solutions to these challenges are quite varied and some are very technology dependent.  You will solve them differently using a .NET stack than a Ruby stack or a JAVA stack.  I will discuss some architectural mitigations to these challenges when I discuss pragmatic micro-services in a part (5) of this series.
+
+a) Cognitive complexity
+
+In a way, Microservices can dramatically reduce the complexity of a given system.  If a developer wants to know how a system works, it is much easier to grok several systems with 1k lines of code than a single system with 10 - 15k.  Additionally, given really small services, poor or incomprehensible services can be reimplemented with little impact to the rest of the system.  However, this comes with a cost.  Tracing execution across service boundaries can be challenging.  Logs become distributed and tracking down issues can take a developer a long time.  Simply understanding the responsibilities of the services, and more importantly maintaining the integrity of those service responsibilities can be a challenge.
+
+b) More Integration Work
+
+Integration between two services always causes additional work.  Additional effort for the developers.  When a system is broken down and each part of the system must integrate with other parts of the system, this causes additional work.
+
+c) Duplicated code/library coupling
+
+There is an on going debate about whether or not you should share client libraries for each micro-service you build.  If you don't, you end up with code duplication and additional challenges around API versioning.  If you do, you end up with tighter coupling between your services.  It's not an easy decision and both methods has there costs and benefits.  
+
+A couple of rules that I always follow are: 1) NEVER share client libraries with a 3rd party or even between different code bases within your company.  If you have different code bases they can not be coupled via a client library as you lose alot of the value of REST. 2) NEVER NEVER NEVER put ANY domain logic inside your client libraries.  Client libraries are meant ONLY to provide a convenient method for integration NOT any sort of domain processing.  I will delve slightly deeper into this concept in the following post.
+
+d) Configuration Management
+
+Configuration management in a distributed system is a challenge.  In a way this is a solved problem, but none of the solutions come for free.  To put the challenge in numbers, say that you have 5 microservices in your architecture, if you have ONLY 3 environments (dev/local, pre-prod, prod) you will need a minimum of 15 configuration files to support this.  I won't go into too much detail about this challenge, but suffice it to say that you need to deal with it in an effective manner or get buried in a configuration nightmare.
+
+e) Glue Code
+
+Each service that you create requires some sort of application container to make it work.  These application containers require some level of glue code to make them work.  Glue code being defined as code that provides the scaffolding upon which you can build business functionality.  In 'Technologies of Old'(TM) the amount of glue code required would make a micro-service architecture virtually impossible to build.  Tech stacks like J2EE or ASP.NET make the micro-services a very unpalatable option.  Fortunately, there have been a raft of technologies coming out recently that provide lightweight http containers that don't take massive amounts of glue code.  Sinatra(Ruby), Nancy(.NET), Dropwizard(Java) and Play(Scala) are great examples of new technologies that dramatically help reduce the amount of glue code required for a micro-service architecture.
+
+f) Deployment
+
+Deploying more than one service is more challenging than deploying a single service.  It can be argued that the complexity chart goes something like this 1 < 2 = n, or the majority of the work required is to deploy more than one service rather than each service adding incrementally more work.  If done right, this is close to the truth, but regardless, it costs more to deploy multiple services than it costs to deploy a single service.
+
+---
+Each one of these challenges can be mitigated either through technology choices or architectural choices.  It is a silly architect that goes into a micro-service architecture without understanding these challenges and having a plan in place to mitigate them.
