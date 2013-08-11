@@ -2,9 +2,9 @@ This is the second part of a multi-part series of blog posts on Micro-services. 
 
 1. What are Micro-services (aka Micro-service architecture)?
 
-The concept of micro-services is relatively new (this is based only on the google search for the term).  It seems that the concept was coined by a colleague of mine, James Lewis.  It seems likely however, that people have been building software following this paradigm for quite a while, just haven't really put alot of thought into what it actually means.  It's not easy to define micro services however, but I'll give it my best shot. ** not true, need a bit better description here 
+The concept of micro-services is relatively new (this is based only on the google search for the term).  It seems that the concept was coined by a colleague of mine, James Lewis.  It seems likely however, that people have been building software following this paradigm for quite a while, just haven't really put alot of thought into what it actually means.  It's not easy to define micro-services however, but I'll give it my best shot. ** not true, need a bit better description here 
 
-The first thing to cover is what micro-services are not.  Micro services are not 1 million services that make up a single service. (get it... micro = million... ha ha...?).  Micro-services are also not a single service that covers a bunch of functionality and interacts with other services within a large enterprise system.  Instead, the truth, I believe, lives somewhere in the middle.
+The first thing to cover is what micro-services are not.  Micro-services are not 1 million services that make up a single service. (get it... micro = million... ha ha...?).  Micro-services are also not a single service that covers a bunch of functionality and interacts with other services within a large enterprise system.  Instead, the truth, I believe, lives somewhere in the middle.
 
 Another thing that is important to recognise is that micro-services are not necessarily independently deployable.  Instead of focusing on the services being independently deployable, it is sufficient to choose groups of services that can be deployed independently.  James Lewis describes this as a city layout(1) and suggests that services that work together to provide a given piece or set of functionality should be independently deployable from other groups of services that provide a different piece or set of functionality.  Within the group of services that provide that piece or set of functionality do not need to be independently deployable. There are costs to deploying services independently(2) and the pragmatic mind avoids independently deployable services unless it provides real value. 
 
@@ -18,7 +18,7 @@ There are other protocols that could function in this space, and I do not want t
 
 So, with that context, let's try to define micro-services, or a micro-service Architecture:
 
-A system built using micro-services is a system that is built up of small, lightweight services, each performing a single function.  These services communicate with each other via a well defined interface and work together to provide business value.
+A system built using micro-services is a system that is built up of small, lightweight services, where each performs a single function.  These services communicate with each other via a well defined interface and work together to provide business value.
 
 (1) link to James' video
 (2) API versioning, Hypermedia, etc

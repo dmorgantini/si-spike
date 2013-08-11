@@ -4,7 +4,7 @@ This is the forth part of a multi-part series of blog posts on Micro-services.  
 
 As with every tool that we choose to use, there are costs and benefits.  The benefits of micro-services are many and varied (as I outlined in the previous section) but the costs are there.  Without mitigation, it is entirely possible for a project with micro-services to be sunk beneath the costs. 
 
-I think that it's important to point out though, that many of the challenges I'm going to list here are also challenges for non-Micro-service architectures.  Often-times these challenges become implicit challenges in other architectures rather than explicit challenges in micro-services.  There is always going to be a trade off between the costs and benefits.
+I think that it's important to point out though, that many of the challenges I'm going to list here are also challenges for non-Micro-service architectures.  These challenges are also present in other architectures or manifest in other ways ways.  There are always going to be trade offs between the costs and benefits of every architectural decision that you make.
 
 This section of this series is going to focus mainly on the challenges themselves.  I will attempt to explain and articulate them in a meaningful, and therefore discussable way.  The solutions to these challenges are quite varied and some are very technology dependent.  You will solve them differently using a .NET stack than a Ruby stack or a JAVA stack.  I will discuss some architectural mitigations to these challenges when I discuss pragmatic micro-services in a part (5) of this series.
 
@@ -24,7 +24,9 @@ A couple of rules that I always follow are: 1) NEVER share client libraries with
 
 d) Configuration Management
 
-Configuration management in a distributed system is a challenge.  In a way this is a solved problem, but none of the solutions come for free.  To put the challenge in numbers, say that you have 5 microservices in your architecture, if you have ONLY 3 environments (dev/local, pre-prod, prod) you will need a minimum of 15 configuration files to support this.  I won't go into too much detail about this challenge, but suffice it to say that you need to deal with it in an effective manner or get buried in a configuration nightmare.
+Configuration management in a distributed system is a challenge.  In a way this is a solved problem, but none of the solutions come for free.  To put the challenge in numbers, say that you have 5 microservices in your architecture, if you have ONLY 3 environments (dev/local, pre-prod, prod) you will need a minimum of 15 configuration files to support this.  I won't go into too much detail about this challenge, but suffice to say that you need to deal with it in an effective manner or get buried in a configuration nightmare.
+
+It could be very easy to break some of granular benefits of a micro-service architecture if your configuration management system re-couples the dependencies at deploy-time due to insufficient thought given to deployment architecture.
 
 e) Glue Code
 
