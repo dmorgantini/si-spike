@@ -10,4 +10,4 @@ In order to support this, the RP needs to send all the pieces of information req
 
 The test hub is a service, supported by the Ida Delivery Team, that supports saml interoperability testing with all integrating partners for the GDS Hub.  This document is focused on the functionality and operating of the test hub for rps.
 
-[More reading](#)
+[More reading](https://github.com/dmorgantini/blog-post/master/test-hub-for-rp.md)
