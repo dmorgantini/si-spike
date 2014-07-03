@@ -1,2 +1,2 @@
-blog-post
+Fun documentation for funs!
 =========
